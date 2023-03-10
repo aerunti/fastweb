@@ -23,4 +23,4 @@ The intended use of FastWeb is you clone the github repository to a a new folder
 
 ## Documentation
 
-Check the [documentation](fastweb.aerun.com.br)
+Check the [documentation](https://fastweb.aerun.com.br)
