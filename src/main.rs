@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-
+use actix_files as fs;
 use actix_web::{
     body::BoxBody,
     dev::ServiceResponse,
@@ -43,8 +43,14 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .app_data(web::Data::new(tera))
             .wrap(middleware::Logger::default()) // enable logger
+            .service(
+                fs::Files::new("/static", "./static")
+                    .show_files_listing()
+                    .use_last_modified(true),
+            )
             .service(web::resource("/").route(web::get().to(index)))
             .service(web::scope("").wrap(error_handlers()))
+
     })
     .bind(("127.0.0.1", 8080))?
     .run()
@@ -94,4 +100,4 @@ fn get_error_response<B>(res: &ServiceResponse<B>, error: &str) -> HttpResponse 
         }
         None => fallback(error),
     }
-}
+}   

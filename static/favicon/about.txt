@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Chivo
+- Font Author: Copyright 2019 The Chivo Project Authors (https://github.com/Omnibus-Type/Chivo)
+- Font Source: http://fonts.gstatic.com/s/chivo/v18/va9b4kzIxd1KFppkaRKvDRPJVDf_FRjul2DSFXjQiQ.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
