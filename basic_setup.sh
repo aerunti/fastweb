@@ -22,8 +22,8 @@ rustup component add clippy
 sudo apt install libssl-dev
 cargo install cargo-tarpaulin
 cargo install cargo-watch
-cargo install sqlx-cli
 sudo service postgresql start
 sudo -u postgres psql -c "create database fastweb;"
+cargo install sqlx-cli --no-default-features --features native-tls,postgres
 sqlx migrate run
 bash make_watch.sh
