@@ -11,4 +11,6 @@ pub use super::{
     actix_session::{Session, SessionMiddleware, storage::RedisActorSessionStore},
     tera::{Tera,Context},
     log::{info, warn, error, debug, trace},
+    models::AppState,
+
 };

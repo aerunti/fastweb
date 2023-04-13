@@ -3,22 +3,25 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-<h1>Sign Up</h1>
+<h1>Sign In</h1>
 
 
 
-<form action="/register" method="POST">
+<form action="/do_login" method="POST">
 
     <p>
         <label for="email">Email:</label>
         <input name="email" type="text" value="{{ form.email }}">
         <br>
+        <label for="password">Password:</label>
+        <input name="password" type="password" value="{{ form.password }}"><br>
         {% if error | length > 0 %}
             <span style="color:red;"> {{ error }} </span>
         {% endif %}
+       
     </p>
     
-    <button type="submit">Create Account</button>
+    <button type="submit">Sign In</button>
 </form>
-<a href="/login" >Login</a> <a href="/recover-password">Recover Password</a>  
+<a href="/register" >Register</a> <a href="/recover-password">Recover Password</a>  
 {% endblock %}

@@ -3,16 +3,66 @@ use std::fmt::Debug;
 // use djangohashers::make_password;
 use rand::{thread_rng, Rng};
 
-#[derive(Debug,Deserialize)]
+#[derive(Debug,Deserialize,Serialize)]
 pub struct User {
-    pub id: i32,
+    pub id: i64,
+    pub name: String,
+    pub email: String,
+    pub password: String,
+    pub status: String,
+    pub permissions: String,
 }
 
-impl Default for User {
-    fn default() -> Self {
-        User { id: 0 }
+impl User{
+    pub fn new(id: &i64, name: &str, email: &str, password: &str, status: &str, permissions: &str) -> Self {
+        User {
+            id: *id,
+            name: name.to_string(),
+            email: email.to_string(),
+            password: password.to_string(),
+            status: status.to_string(),
+            permissions: permissions.to_string(),
+        }
     }
 }
+impl Default for User {
+    fn default() -> Self {
+        User { id: 0 ,
+            name: String::from(""),
+            email: String::from(""),
+            password: String::from(""),
+            status: String::from(""),
+            permissions: String::from(""),
+        }
+    }
+}
+
+
+#[derive(Debug,Serialize,Deserialize,Clone)]
+pub struct FormLogin {
+    pub email: String,
+    pub password: String,
+}
+
+
+impl FormLogin {
+    pub fn new(email: &str, password: &str) -> Self {
+        FormLogin {
+            email: email.to_string(),
+            password: password.to_string(),
+        }
+    }
+}
+
+impl Default for FormLogin {
+    fn default() -> Self {
+        FormLogin {
+            email: String::from(""),
+            password: String::from(""),
+        }
+    }
+}
+
 
 #[derive(Debug,Serialize,Deserialize)]
 pub struct FormRegister {

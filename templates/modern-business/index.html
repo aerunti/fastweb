@@ -1,6 +1,14 @@
 {% extends "layout.html" %}
 
-{% block title %}Sign Up{% endblock %}
+{% block title %}Home{% endblock %}
+{% block auth %}
+<a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ user.nome}}</a>
+<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+    <li><a class="dropdown-item" href="/profile">Profile</a></li>
+    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+
+</ul>
+{% endblock %}
 
 {% block content %}
             <!-- Header-->
@@ -10,7 +18,7 @@
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
                                 <h1 class="display-5 fw-bolder text-white mb-2">A Simple Bootstrap 5 template example</h1>
-                                <p class="lead fw-normal text-white-50 mb-4">{{text}} {{name}} To you adapt or replace with your own template</p>
+                                <p class="lead fw-normal text-white-50 mb-4"> {{user.name}} To you adapt or replace with your own template</p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                     <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
                                     <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
