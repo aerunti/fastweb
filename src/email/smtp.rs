@@ -22,9 +22,9 @@ pub fn send_email(to: String, password: String)-> String{
 
         // Send the email 
         let send = match mailer.send(&email) { 
-        Ok(_) => "Email sent successfully!".to_string(), 
-        Err(e) => format!("Could not send email: {:?}", e), 
-    };
+            Ok(_) => "Email sent successfully!".to_string(), 
+            Err(e) => format!("Could not send email: {:?}", e), 
+        };
     send
 
 }
